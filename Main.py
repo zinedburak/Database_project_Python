@@ -328,40 +328,83 @@ if __name__ == '__main__':
     while True:
         mainMenu()
         choice = int(input())
-        if choice == 12:
+        if choice == 11:
+            con.close()
             break
         elif choice == 1:
             string = input("Please enter a string ")
-            addFarmer(string)
-            print("You Added New Farmer")
+            try:
+                addFarmer(string)
+                print("You Added New Farmer")
+            except IndexError:
+                print("Not enough Data")
+            except sqlite3.IntegrityError:
+                print("Dublicate Data")
+
         elif choice == 2:
             string = input("Please enter a string ")
-            addFarmers(string)
-            print("You Added New Farmers")
+            try:
+                addFarmers(string)
+                print("You Added New Farmers")
+            except IndexError:
+                print("Not enough Data")
+            except sqlite3.IntegrityError:
+                print("Dublicate Data")
         elif choice == 3:
             string = input("Please enter a string")
-            addProduct(string)
-            print("You have added new Product")
+            try:
+                addProduct(string)
+                print("You have added new Product")
+            except IndexError:
+                print("Not enough Data")
+            except sqlite3.IntegrityError:
+                print("Dublicate Data")
         elif choice == 4:
             string = input("Please enter a string")
-            addProducts(string)
-            print("You have added new Products")
+            try:
+                addProducts(string)
+                print("You have added new Products")
+            except IndexError:
+                print("Not enough Data")
+            except sqlite3.IntegrityError:
+                print("Dublicate Data")
         elif choice == 5:
             string = input("Please enter a string")
-            addMarket(string)
-            print("You have added new Market")
+            try:
+                addMarket(string)
+                print("You have added new Market")
+            except IndexError:
+                print("Not enough Data")
+            except sqlite3.IntegrityError:
+                print("Dublicate Data")
         elif choice == 6:
             string = input("Please enter a string")
-            addMarkets(string)
-            print("You have added new Markets")
+            try:
+                addMarkets(string)
+                print("You have added new Markets")
+            except IndexError:
+                print("Not enough Data")
+            except sqlite3.IntegrityError:
+                print("Dublicate Data")
         elif choice == 7:
             string = input("Please enter a string")
-            registerProduct(string)
-            print("You have register a product")
+            try:
+                registerProduct(string)
+                print("You have register a product")
+            except IndexError:
+                print("Not enough Data")
+            except sqlite3.IntegrityError:
+                print("Dublicate Data")
         elif choice == 8:
+
             string = input("Please enter a string")
-            registerProduct(string)
-            print("You have register a product")
+            try:
+                registerProduct(string)
+                print("You have register a product")
+            except IndexError:
+                print("Not enough Data")
+            except sqlite3.IntegrityError:
+                print("Dublicate Data")
         elif choice == 9:
             showTables()
         elif choice == 10:
@@ -371,3 +414,5 @@ if __name__ == '__main__':
             # loadregister()
             # loadbuys()
             loadproduces()
+        else:
+            print("Wrong comment ")
